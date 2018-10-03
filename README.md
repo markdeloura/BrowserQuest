@@ -34,3 +34,5 @@ Created by [Little Workshop](http://www.littleworkshop.fr):
 * Guillaume Lecollinet - [@glecollinet](http://twitter.com/glecollinet)
 
 Ported by [Matthew Javelet](https://github.com/0xMatt)
+
+A few bug fixes to the Typescript version by [Mark DeLoura](https://twitter.com/markdeloura)
