@@ -17,18 +17,18 @@ Configuration
 -------------
 
 The server settings (number of worlds, number of players per world, etc.) can be configured.
-Modify `config.json` or create a new file and specify the path when running the server with the second argument, e.g: `yarn watch:server ./config-prod.json`
+Modify `config.json` or create a new file and specify the path when running the server with the second argument, e.g: `npm watch:server ./config-prod.json`
 
 Development
 -----------
 
-To launch the application for development, simply run `yarn watch:servr`
+To launch the application for development, simply run `npm watch:server`
 
 
 Deployment
 ----------
 
-In order to deploy the server, simply run `yarn build:server` and copy the `dist/server` and `dist/shared` directories to the staging/production server.
+In order to deploy the server, simply run `npm build:server` and copy the `dist/server` and `dist/shared` directories to the staging/production server.
 
 Then run `node server/ts/main.js` in order to start the server.
 
