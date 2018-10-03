@@ -25,3 +25,5 @@ To configure the port your local dev server runs on, just change the environment
 ### Serving for production
 
 Just run `npm run build:client` and copy your `dist/client` directory to your webservers root.
+
+Please note that you'll need to alter client/config/config.json to your production environment server host and port prior to running this last npm build step.

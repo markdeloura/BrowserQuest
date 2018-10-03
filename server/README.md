@@ -28,10 +28,15 @@ To launch the application for development, simply run `npm run watch:server`
 Deployment
 ----------
 
-In order to deploy the server, simply run `npm run build:server` and copy the `dist/server` and `dist/shared` directories to the staging/production server.
+In order to deploy the server, run `npm run build:server` and copy the `dist/server` and `dist/shared` directories to the staging/production server.
 
-Then run `node server/ts/main.js` in order to start the server.
+Next, you'll need to set up a few packages in npm. Run `npm init` and accept all the defaults. Now run `npm install --save` for each of the following packages: express, log, sanitizer, socket.io, and lodash@3.10.1.
 
+You will also need to copy over server/config.json to dist/server/config.json.
+
+The maps/ directory does not get copied by default. Copy server/maps to dist/server/maps.
+
+Now, run `node server/ts/main.js` in order to start the server.
 
 Note: the `shared` directory is the only one in the project which is a server dependency.
 
