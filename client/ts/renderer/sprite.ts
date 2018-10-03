@@ -85,7 +85,7 @@ export class Sprite {
         data[i] = 255;
         data[i + 1] = data[i + 2] = 75;
       }
-      spriteData.data = data;
+      spriteData.data.set(data);
 
       ctx.putImageData(spriteData, 0, 0);
 
@@ -167,7 +167,7 @@ export class Sprite {
       }
     }
 
-    finalData.data = fdata;
+    finalData.data.set(fdata);
     ctx.putImageData(finalData, 0, 0);
 
     this.silhouetteSprite = {
