@@ -408,6 +408,14 @@ var initGame = function () {
   if (game.renderer.tablet) {
     $('body').addClass('tablet');
   }
+
+  // Grab the profile name off the command line, if it exists, and use it to start the game
+  let profileRegexp = new RegExp('[\?&]' + 'profile' + '=([^&#]*)').exec(window.location.href);
+  if (profileRegexp != null) {
+    let profileName = decodeURI(profileRegexp[1]);
+    $('#nameinput').val(profileName);
+    app.tryStartingGame(profileName);
+  }
 };
 
 initApp();

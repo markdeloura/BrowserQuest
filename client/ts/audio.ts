@@ -19,7 +19,7 @@ export class AudioManager {
   constructor(game) {
     var self = this;
     this.game = game;
-    this.extension = Detect.canPlayMP3() ? 'mp3' : 'ogg';
+    this.extension = Detect.canPlayOGG() ? 'ogg' : 'mp3';
 
 
     var loadSoundFiles = function () {

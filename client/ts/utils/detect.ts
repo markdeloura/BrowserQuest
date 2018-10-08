@@ -25,8 +25,15 @@ export class Detect {
     return this.userAgentContains('Chrome') && this.userAgentContains('Windows');
   };
 
-  static canPlayMP3() {
+  static canPlayOGG() {
     // return Modernizr.audio.mp3;
+    var elem : HTMLAudioElement = document.createElement('audio');
+    if (typeof elem.canPlayType == 'function') {
+      if (elem.canPlayType('audio/ogg; codecs="vorbis"') == 'probably') {
+        return true;
+      } 
+    } 
+    return false;
   };
 
   static isSafari() {
