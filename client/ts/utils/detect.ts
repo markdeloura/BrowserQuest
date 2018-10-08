@@ -1,13 +1,16 @@
 export class Detect {
-  static supportsWebSocket() {
+  static supportsWebSocket() : boolean {
     // return window.WebSocket || window.MozWebSocket;
+    return true; // because usually true, but this is actually not used anywhere in code.
   };
 
-  static userAgentContains(value: string) {
+  static userAgentContains(value: string) : boolean {
     return navigator.userAgent.indexOf(value) !== -1;
   };
 
-  static isTablet(screenWidth) {
+  // isTablet()
+  // I don't love this one... this is original code. [MAD]
+  static isTablet(screenWidth) : boolean {
     if (screenWidth > 640) {
       if ((this.userAgentContains('Android') && this.userAgentContains('Firefox'))
         || this.userAgentContains('Mobile')) {
@@ -17,15 +20,15 @@ export class Detect {
     return false;
   };
 
-  static isWindows() {
+  static isWindows() : boolean {
     return this.userAgentContains('Windows');
   }
 
-  static isChromeOnWindows() {
+  static isChromeOnWindows() : boolean {
     return this.userAgentContains('Chrome') && this.userAgentContains('Windows');
   };
 
-  static canPlayOGG() {
+  static canPlayOGG() : boolean {
     // return Modernizr.audio.mp3;
     var elem : HTMLAudioElement = document.createElement('audio');
     if (typeof elem.canPlayType == 'function') {
@@ -36,11 +39,17 @@ export class Detect {
     return false;
   };
 
-  static isSafari() {
+  static isSafari() : boolean {
     return this.userAgentContains('Safari') && !this.userAgentContains('Chrome');
   };
 
-  static isOpera() {
+  static isOpera() : boolean {
     return this.userAgentContains('Opera');
   };
+
+  // isIOS()
+  // Seems to be true regardless of browser used on iOS devices.
+  static isIOS() : boolean {
+    return this.userAgentContains('AppleWebKit');
+  }
 }
